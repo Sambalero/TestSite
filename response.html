@@ -17,8 +17,7 @@
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+
         <script src="_js/my_jive.js"></script>
     </head>
     <body>
@@ -37,13 +36,37 @@
                     </p>  
                 </div>
             </header>
-
-            <h1 class="centered">Payment Form Received</h1>
+            <div id="write-h" class="centered">
+            <h1>Payment Form Received</h1>
+            </div>
+            <div id="write-d" class="centered">
             </div>
             <footer class="centered">
               Kevin Swallow, 2013: &nbsp;HTML5 - CSS3 - JavaScript - GIMP
             </footer>
+            <script type="text/javascript">
+                <!-- HIDE FROM INCOMPATIBLE BROWSERS
+                if (window != top)
+                    top.location.href=location.href
+                    var block = document.getElementById("write-h");
+                block.innerHTML="<h1>Payment Form Received!</h1><h2>You entered the following data:</h2>";
 
-    <!-- end container -->
+                var formData = location.search;
+                formData = formData.substring(1, formData.length);
+                while (formData.indexOf("+") != -1) {
+                    formData = formData.replace("+", " ");
+                }
+                formData = unescape(formData);
+
+                var formArray = formData.split("&");
+                var data = document.getElementById("write-d");
+                for (var i=0; i < formArray.length; ++i) {
+                    data.innerHTML = data.innerHTML + (formArray[i] + "<br />");
+                }
+
+                // STOP HIDING FROM INCOMPATIBLE BROWSERS -->
+            </script>
+        </div>
+<!-- end container -->
     </body>
-    </html>
+</html>

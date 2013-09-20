@@ -1,24 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Everyone Can Dance</title>
-        <?php include '_includes/head.php'; ?>     
-    </head>
-    <body class="dm">
-        <?php include '_includes/header.php'; ?> 
-        <div class="mainbar">
-            <?php include '_includes/leftbar.php'; ?> 
-            <?php include '_includes/rightbar.php'; ?> 
-            <div class="main">
-                <h2>A class</h2>
-                <h2>dedicated to the proposition</h2>
-                <h2>that everyone can share</h2>
-                <h2>in the joy of dance,</h2>
-                <h2>including you!</h2> 
-                <?php include '_includes/register.php'; ?>     
-            </div>
-        </div>    
-        <?php include '_includes/footer.php'; ?>     
-    </body>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Test Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <link rel="stylesheet" href="_css/my_style.css">
+    <link rel="stylesheet" href="_css/mdn_form.css">
+
+    <!--[if gte IE 9]>
+        <link rel="stylesheet" href="_css/my_IE_style.css">
+    <![endif]-->
+
+    <!-- JS -->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+    <script src="_js/my_jive.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div class="banner">
+            <h1 class="page-title">Test Form</h1>
+            <h4 class="right"><span class="sprite-swallow_icon"></span>Created and maintained by Kevin Swallow </h4>
+        </div>  
+        <div class="index">   
+            <p class="tight" id="nav">
+              <span class="contact"> <a href="http://kevinswallow.com/" title="Home">CONTACT</a></span>
+              <span class="version">
+            <a href="javascript:history.go(-1)" title="Go Back">BACK</a>
+           </span></p>  
+        </div>
+      </header>
+
+      <div class="main">
+        <div class="wrapper">
+          <form id="paymentForm" action="./response.html" method="post" accept-charset="utf-8">
+            <h1>Payment Form</h1>
+            <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+            <section>
+              <h2>Contact Information</h2>
+              
+              <fieldset>
+                <legend>Title</legend>
+                <ul>
+                  <li>
+                    <label for="title_1">
+                      <input type="radio" id="title_1" name="title" value="M." />
+                      Mister
+                    </label>
+                  </li>
+                  <li>
+                    <label for="title_2">
+                      <input type="radio" id="title_2" name="title" value="Ms." />
+                      Miss
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+              
+              <p>
+                <label for="username">
+                  <span>Name: </span>
+                  <input type="text" id="username" name="username" required />
+                  <strong><abbr title="required">*</abbr></strong>
+                </label>
+              </p>
+              <p>
+                <label for="usermail">
+                  <span>E-mail: </span>
+                  <input type="email" id="usermail" name="usermail" required />
+                  <strong><abbr title="required">*</abbr></strong>
+                </label>
+              </p>
+            </section>
+            <section>
+              <h2>Payment Information</h2>
+              <p>
+                <label for="card">
+                  <span>Card type:</span>
+                  <select id="card" name="usercard">
+                    <option value="visa">Visa</option>
+                    <option value="mc">Mastercard</option>
+                    <option value="amex">American Express</option>
+                  </select>
+                </label>
+              </p>
+              <p>
+                <label for="cardNumber">
+                  <span>Card number:</span>
+                  <input type="text" id="cardNumber" name="cardnumber" required />
+                  <strong><abbr title="required">*</abbr></strong>
+                </label>
+              </p>
+              <p>
+                <label for="expDate">
+                  <span>Expiration date:</span>
+                  <input type="text" id="expDate" name="expiration" required />
+                  <strong><abbr title="required">*</abbr></strong>
+                  <!-- <em>formated as mm/yy</em> -->
+                </label>
+              </p>
+            </section>
+           
+            <section>
+              <p>
+                <button>Validate Payment</button>
+              </p>
+            </section>
+          </form>
+
+          <form>
+            <p>Browser Information</p>
+            <table>
+              <tr>
+                <td>
+                    <p id="browserCodeNameStaticTextID">Browser CodeName: </p>
+                </td>
+                <td>
+                    <input type="text" name="browserCodeNameTextBoxName" id="browserCodeNameTextBoxID" disabled="true" size="70" maxlength="70" value="" class="inputField">
+                    <script type="text/javascript">
+                      txt = navigator.appCodeName;
+                      document.getElementById("browserCodeNameTextBoxID").value=txt;
+                    </script>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <p id="browserNameStaticTextID">Browser Name: </p>
+                </td>
+                <td>
+                    <input type="text" name="browserNameTextBoxName" id="browserNameTextBoxID" disabled="true" size="70"maxlength="70" value="" class="inputField">
+                    <script type="text/javascript">
+                      txt = navigator.appName;
+                      document.getElementById("browserNameTextBoxID").value=txt;
+                    </script>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <p id="browserVersionStaticTextID">Browser Version: </p>
+                </td>
+                <td>
+                    <input type="text" name="browserVersionTextBoxName" id="browserVersionTextBoxID" disabled="true" size="70" maxlength="70" value="" class="inputField">
+                    <script type="text/javascript">
+                      txt = navigator.appVersion;
+                      document.getElementById("browserVersionTextBoxID").value=txt;
+                    </script>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <p id="browserVersionStaticTextID">Browser Cookies Enabled: </p>
+                </td>
+                <td>
+                    <input type="text" name="browserCookiesEnabledTextBoxName" id="browserCookiesEnabledTextBoxID" disabled="true" size="70" maxlength="70" value="" class="inputField">
+                    <script type="text/javascript">
+                      txt = navigator.cookieEnabled;
+                      document.getElementById("browserCookiesEnabledTextBoxID").value=txt;
+                    </script>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <p id="platformStaticTextID">Platform: </p>
+                </td>
+                <td>
+                    <input type="text" name="platformTextBoxName" id="platformTextBoxID" disabled="true" size="70" maxlength="70" value="" class="inputField">
+                    <script type="text/javascript">
+                      txt = navigator.platform;
+                      document.getElementById("platformTextBoxID").value=txt;
+                    </script>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <p id="userAgentStaticTextID">User Agent: </p>
+                </td>
+                <td>
+                    <input type="text" name="userAgentTextBoxName" id="userAgentTextBoxID" disabled="true" size="70" maxlength="70" value="" class="inputField">
+                    <script type="text/javascript">
+                      txt = navigator.userAgent;
+                      document.getElementById("userAgentTextBoxID").value=txt;
+                    </script>
+                </td>
+              </tr>
+            </table>
+
+          </form>
+
+
+        </div>
+<!-- end wrapper  -->
+      </div>    
+<!-- end main -->
+      <div class="sidebar">
+
+        <form>
+            <p>Payment Contact Information</p>
+           <p id="titleOut"><button class="left" onclick="outTitle()">Show</button>Title: </p>
+          <p id="nameOut"><button class="left" onclick="outName()">Show</button>Name: </p>
+          <p id="eMailOut"><button class="left" onclick="outMail()">Show</button>Email: </p>
+        </form>
+        <form>
+            <p>Payment Information</p>
+           <p id="cardTypeOut"><button class="left" onclick="outCardType()">Show</button>Card Type: </p>
+           <p id="cardNumberOut"><button class="left" onclick="outCardNumber()">Show</button>Card Number Ending In: </p>
+           <p id="expDateOut"><button class="left" onclick="outExpDate()">Show</button>Exp Date: </p>
+        </form>
+      </div>
+<!-- end sidebar -->
+
+      <p class="cred centered">
+      <a href="http://kevinswallow.com/credits.html" title="credits">Credits</a>
+      </p>     
+  
+      <footer class="centered">
+          Kevin Swallow, 2013: &nbsp;HTML5 - CSS3 - JavaScript - GIMP
+      </footer>
+   </div>  
+<!-- end container -->
+  </body>
 </html>

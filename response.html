@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Payment Received</title>
+        <!-- CSS -->
+        <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+        <link rel="stylesheet" href="_css/my_style.css">
+        <link rel="stylesheet" href="_css/mdn_form.css">
+
+        <!--[if gte IE 9]>
+            <link rel="stylesheet" href="_css/my_IE_style.css">
+        <![endif]-->
+
+        <!-- JS -->
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script src="_js/my_jive.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="banner">
+                    <h1 class="page-title">Test Form Response</h1>
+                    <h4 class="right"><span class="sprite-swallow_icon"></span>Created and maintained by Kevin Swallow </h4>
+                </div>  
+                <div class="index">   
+                    <p class="tight" id="nav">
+                        <span class="contact"> <a href="http://kevinswallow.com/" title="Home">CONTACT</a></span>
+                        <span class="version">
+                            <a href="javascript:history.go(-1)" title="Go Back">BACK</a>
+                        </span>
+                    </p>  
+                </div>
+            </header>
+            <div id="write-h" class="centered">
+            <h1>Payment Form Received</h1>
+            </div>
+            <div id="write-d" class="centered">
+            </div>
+            <footer class="centered">
+              Kevin Swallow, 2013: &nbsp;HTML5 - CSS3 - JavaScript - GIMP
+            </footer>
+            <script type="text/javascript">
+                <!-- HIDE FROM INCOMPATIBLE BROWSERS
+                if (window != top)
+                    top.location.href=location.href
+                    var block = document.getElementById("write-h");
+                block.innerHTML="<h1>Payment Form Received!</h1><h2>You entered the following data:</h2>";
+
+                var formData = location.search;
+                formData = formData.substring(1, formData.length);
+                while (formData.indexOf("+") != -1) {
+                    formData = formData.replace("+", " ");
+                }
+                formData = unescape(formData);
+
+                var formArray = formData.split("&");
+                var data = document.getElementById("write-d");
+                for (var i=0; i < formArray.length; ++i) {
+                    data.innerHTML = data.innerHTML + (formArray[i] + "<br />");
+                }
+
+                // STOP HIDING FROM INCOMPATIBLE BROWSERS -->
+            </script>
+        </div>
+<!-- end container -->
+    </body>
+</html>
